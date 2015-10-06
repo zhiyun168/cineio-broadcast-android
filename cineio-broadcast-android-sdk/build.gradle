@@ -21,11 +21,11 @@ android {
 
 dependencies {
     compile 'com.google.guava:guava:16.0'
-    compile 'com.loopj.android:android-async-http:1.4.5'
+    compile 'com.loopj.android:android-async-http:1.4.8'
     compile 'com.android.support:appcompat-v7:20.0.0'
     compile 'com.android.support:support-v4:20.0.0'
 }
 
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
 // apply from: 'https://raw.githubusercontent.com/jpardogo/gradle-mvn-push/master/gradle-mvn-push.gradle'
 //apply from: 'https://raw.githubusercontent.com/cine-io/gradle-mvn-push/master/gradle-mvn-push.gradle'
