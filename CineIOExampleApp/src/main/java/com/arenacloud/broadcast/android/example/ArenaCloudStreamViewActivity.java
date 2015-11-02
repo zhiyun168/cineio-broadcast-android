@@ -20,7 +20,7 @@ public class ArenaCloudStreamViewActivity extends Activity {
     private String publicKey = "1c76aec81ad398126f5f5d2eda531c89";
     private String id = "7f25edf7ad0cf251611000dd";
     private String password = "cd30b0dd";
-    private String ticket = "ZT0xNDc1ODM5NTkwJmM9MTIzNDU2Nzg5MCZzPURLQ1Q1SGxyUFR4cnlkem1hcXF2VkMyWjVoczRWcGxVTzVwbXJ2UHk5YUE";
+    private String ticket = "ZT0xNDc3NTU4NTQ4JmM9MTIzNDU2Nzg5MCZzPXczYWFnQi1Jc1ZqQzhGQzFpR194QUFHYzB4eFU5NDE4U1BGQ094cEcwUzQ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,19 +87,40 @@ public class ArenaCloudStreamViewActivity extends Activity {
                 mClient.play(id, ticket, me);
             }
         });
-//
-//        Button seeRecordingsButton = (Button) findViewById(R.id.showRecordings);
-//        seeRecordingsButton.setText("Recordings");
-//        seeRecordingsButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.d(TAG, "Fetching recordings for " + stream.getId());
-//                Intent intent = new Intent(me, ArenaCloudStreamRecordingsListActivity.class);
-//                intent.putExtra("STREAM_DATA", stream.dataString());
-//                intent.putExtra("SECRET_KEY", mClient.getSecretKey());
-//                startActivity(intent);
-//            }
-//        });
+
+        Button seeRecordingsButtonForAnchor = (Button) findViewById(R.id.showRecordingsForAnchor);
+        seeRecordingsButtonForAnchor.setText("RecordingsForAnchor");
+        seeRecordingsButtonForAnchor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(me, ArenaCloudStreamRecordingsListActivity.class);
+                //intent.putExtra("STREAM_DATA", stream.dataString());
+                //intent.putExtra("SECRET_KEY", mClient.getSecretKey());
+
+                intent.putExtra("publicKey",publicKey);
+                intent.putExtra("id",id);
+                intent.putExtra("password",password);
+
+                startActivity(intent);
+            }
+        });
+
+        Button seeRecordingsButtonForViewer = (Button) findViewById(R.id.showRecordingsForViewer);
+        seeRecordingsButtonForViewer.setText("RecordingsForViewer");
+        seeRecordingsButtonForViewer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(me, ArenaCloudStreamRecordingsListActivity.class);
+                //intent.putExtra("STREAM_DATA", stream.dataString());
+                //intent.putExtra("SECRET_KEY", mClient.getSecretKey());
+
+                intent.putExtra("publicKey",publicKey);
+                intent.putExtra("id",id);
+                intent.putExtra("ticket",ticket);
+
+                startActivity(intent);
+            }
+        });
     }
 
 

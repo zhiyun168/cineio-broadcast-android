@@ -21,6 +21,8 @@ public class PlayActivity extends ActionBarActivity {
     private String playUrl_hls = "";
     private int playTtl = 0;
 
+    private String snapShot = "";
+
     private VideoView mVideoView;
 
     @Override
@@ -37,6 +39,8 @@ public class PlayActivity extends ActionBarActivity {
         playUrl_hls = extras.getString("PLAY_URL_HLS");
         playTtl = extras.getInt("PLAY_TTL");
 
+        snapShot = extras.getString("SNAPSHOT");
+
         setContentView(R.layout.activity_play);
 
         mVideoView = (VideoView) findViewById(R.id.video_view);
@@ -46,7 +50,7 @@ public class PlayActivity extends ActionBarActivity {
         mVideoView.setOnCompletionListener(mCompletionListener);
 
 //        mVideoView.setDataSourceType(VideoView.LOWDELAY_LIVE_STREAMING_TYPE);
-        mVideoView.setDataCache(10000);
+        mVideoView.setDataCache(6000);
 
         mVideoView.setVideoPath(playUrl_rtmp);
 
