@@ -81,7 +81,7 @@ public class CameraSurfaceRenderer2 implements GLSurfaceView.Renderer {
         mIncomingWidth = mIncomingHeight = -1;
 
         m.postRotate(180);
-//        m.preScale(-1f, 1f);
+        m.preScale(-1f, 1f);
     }
 
     /**
