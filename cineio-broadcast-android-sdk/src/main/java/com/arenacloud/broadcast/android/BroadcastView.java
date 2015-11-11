@@ -666,34 +666,38 @@ public class BroadcastView extends GLSurfaceView implements SurfaceTexture.OnFra
     {
         lastRecordingStatus = mRecordingEnabled;
 
-        if (mRecordingEnabled) {
-            stopRecording();
-        }
+//        if (mRecordingEnabled) {
+//            stopRecording();
+//        }
 
-        releaseCamera();
-        this.queueEvent(new Runnable() {
-            @Override
-            public void run() {
-                // Tell the renderer that it's about to be paused so it can clean up.
-                mRenderer.notifyPausing();
-            }
-        });
-        this.onPause();
+//        releaseCamera();
+//        this.queueEvent(new Runnable() {
+//            @Override
+//            public void run() {
+//                // Tell the renderer that it's about to be paused so it can clean up.
+//                mRenderer.notifyPausing();
+//            }
+//        });
+//        this.onPause();
+		onPauseHandler();
+		onResumeHandler();
+		startRecording();
+
 //                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 //        updateControls();
-        openCamera();
+//        openCamera();
 
         // Set the preview aspect ratio.
 //        mFrameLayout = (AspectFrameLayout) findViewById(R.id.cameraPreview_afl);
 
-        this.onResume();
-        this.queueEvent(new Runnable() {
-            @Override
-            public void run() {
-                mRenderer.setCameraPreviewSize(mEncodingConfig.getLandscapeWidth(), mEncodingConfig.getLandscapeHeight(), mEncodingConfig.isLandscape());
-            }
-        });
+//        this.onResume();
+//        this.queueEvent(new Runnable() {
+//            @Override
+//            public void run() {
+//                mRenderer.setCameraPreviewSize(mEncodingConfig.getLandscapeWidth(), mEncodingConfig.getLandscapeHeight(), mEncodingConfig.isLandscape());
+//            }
+//        });
     }
 
 
