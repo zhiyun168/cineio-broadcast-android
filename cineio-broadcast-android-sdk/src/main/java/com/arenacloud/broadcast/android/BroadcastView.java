@@ -357,23 +357,18 @@ public class BroadcastView extends GLSurfaceView implements SurfaceTexture.OnFra
     }
 
     public int getCameraFacing(){
-        if(mCameraInfo != null)
-        {
+        if(mCameraInfo != null){
             return mCameraInfo.facing;
         }
-        else if(requestedCamera != null)
-        {
-            if(requestedCamera.equals("back"))
-            {
+        else if(requestedCamera != null){
+            if(requestedCamera.equals("back")){
                 return Camera.CameraInfo.CAMERA_FACING_BACK;
             }
-            else
-            {
+            else{
                 return Camera.CameraInfo.CAMERA_FACING_FRONT;
             }
         }
-        else
-        {
+        else{
             return Camera.CameraInfo.CAMERA_FACING_BACK;
         }
     }
