@@ -367,7 +367,7 @@ public class BroadcastView extends GLSurfaceView implements SurfaceTexture.OnFra
         }
     }
 
-    public void colseCameraFlash()
+    public void closeCameraFlash()
     {
         if(mCamera != null) {
             Camera.Parameters parameters = mCamera.getParameters();
