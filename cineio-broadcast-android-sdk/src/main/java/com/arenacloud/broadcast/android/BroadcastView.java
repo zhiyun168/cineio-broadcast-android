@@ -356,8 +356,7 @@ public class BroadcastView extends GLSurfaceView implements SurfaceTexture.OnFra
         }
     }
 
-    public int getCameraFacing()
-    {
+    public int getCameraFacing(){
         if(mCameraInfo != null)
         {
             return mCameraInfo.facing;
@@ -378,8 +377,8 @@ public class BroadcastView extends GLSurfaceView implements SurfaceTexture.OnFra
             return Camera.CameraInfo.CAMERA_FACING_BACK;
         }
     }
-    public void openCameraFlash()
-    {
+
+    public void openCameraFlash(){
         if(mCamera != null) {
             Camera.Parameters parameters = mCamera.getParameters();
             parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
@@ -389,8 +388,7 @@ public class BroadcastView extends GLSurfaceView implements SurfaceTexture.OnFra
         }
     }
 
-    public void closeCameraFlash()
-    {
+    public void closeCameraFlash(){
         if(mCamera != null) {
             Camera.Parameters parameters = mCamera.getParameters();
             parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
